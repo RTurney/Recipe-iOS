@@ -16,6 +16,12 @@
 		60959FE229B77BFB00DDF624 /* recipe_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FE129B77BFB00DDF624 /* recipe_iosTests.swift */; };
 		60959FEC29B77BFB00DDF624 /* recipe_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FEB29B77BFB00DDF624 /* recipe_iosUITests.swift */; };
 		60959FEE29B77BFB00DDF624 /* recipe_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60959FED29B77BFB00DDF624 /* recipe_iosUITestsLaunchTests.swift */; };
+		60E51A6F29C2157700243C15 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E51A6E29C2157700243C15 /* APIResponse.swift */; };
+		60E51A7129C3164500243C15 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E51A7029C3164500243C15 /* Recipe.swift */; };
+		60E51A7329C3326400243C15 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E51A7229C3326400243C15 /* APICaller.swift */; };
+		60E51A7629C334F300243C15 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E51A7429C334F300243C15 /* RecipeTableViewCell.swift */; };
+		60E51A7729C334F300243C15 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E51A7529C334F300243C15 /* RecipeTableViewCell.xib */; };
+		60E51A7929C35C9700243C15 /* RecipeTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E51A7829C35C9700243C15 /* RecipeTableCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		60959FE729B77BFB00DDF624 /* recipe-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "recipe-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60959FEB29B77BFB00DDF624 /* recipe_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipe_iosUITests.swift; sourceTree = "<group>"; };
 		60959FED29B77BFB00DDF624 /* recipe_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipe_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		60E51A6E29C2157700243C15 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		60E51A7029C3164500243C15 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		60E51A7229C3326400243C15 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		60E51A7429C334F300243C15 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		60E51A7529C334F300243C15 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
+		60E51A7829C35C9700243C15 /* RecipeTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +111,13 @@
 		60959FC929B77BF800DDF624 /* recipe-ios */ = {
 			isa = PBXGroup;
 			children = (
+				60E51A6D29C20A6400243C15 /* View Models */,
+				60E51A6C29C20A5D00243C15 /* Controllers */,
+				60E51A6B29C20A2500243C15 /* Models */,
+				60E51A6A29C20A2000243C15 /* Views */,
 				60959FCA29B77BF800DDF624 /* AppDelegate.swift */,
 				60959FCC29B77BF800DDF624 /* SceneDelegate.swift */,
-				60959FCE29B77BF800DDF624 /* ViewController.swift */,
-				60959FD029B77BF800DDF624 /* Main.storyboard */,
 				60959FD329B77BFB00DDF624 /* Assets.xcassets */,
-				60959FD529B77BFB00DDF624 /* LaunchScreen.storyboard */,
 				60959FD829B77BFB00DDF624 /* Info.plist */,
 			);
 			path = "recipe-ios";
@@ -125,6 +138,43 @@
 				60959FED29B77BFB00DDF624 /* recipe_iosUITestsLaunchTests.swift */,
 			);
 			path = "recipe-iosUITests";
+			sourceTree = "<group>";
+		};
+		60E51A6A29C20A2000243C15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60959FD529B77BFB00DDF624 /* LaunchScreen.storyboard */,
+				60959FD029B77BF800DDF624 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		60E51A6B29C20A2500243C15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				60E51A6E29C2157700243C15 /* APIResponse.swift */,
+				60E51A7029C3164500243C15 /* Recipe.swift */,
+				60E51A7229C3326400243C15 /* APICaller.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		60E51A6C29C20A5D00243C15 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				60959FCE29B77BF800DDF624 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		60E51A6D29C20A6400243C15 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				60E51A7429C334F300243C15 /* RecipeTableViewCell.swift */,
+				60E51A7529C334F300243C15 /* RecipeTableViewCell.xib */,
+				60E51A7829C35C9700243C15 /* RecipeTableCellViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +284,7 @@
 				60959FD729B77BFB00DDF624 /* LaunchScreen.storyboard in Resources */,
 				60959FD429B77BFB00DDF624 /* Assets.xcassets in Resources */,
 				60959FD229B77BF800DDF624 /* Main.storyboard in Resources */,
+				60E51A7729C334F300243C15 /* RecipeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +310,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				60959FCF29B77BF800DDF624 /* ViewController.swift in Sources */,
+				60E51A7329C3326400243C15 /* APICaller.swift in Sources */,
 				60959FCB29B77BF800DDF624 /* AppDelegate.swift in Sources */,
+				60E51A7629C334F300243C15 /* RecipeTableViewCell.swift in Sources */,
 				60959FCD29B77BF800DDF624 /* SceneDelegate.swift in Sources */,
+				60E51A7929C35C9700243C15 /* RecipeTableCellViewModel.swift in Sources */,
+				60E51A6F29C2157700243C15 /* APIResponse.swift in Sources */,
+				60E51A7129C3164500243C15 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
