@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     let apiCaller = APICaller()
     var recipes = [Recipe]()
     var recipeViewModels = [RecipeTableCellViewModel]()
+    var index: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class ViewController: UIViewController {
             case .success(let recipeList):
                 self.recipes = recipeList
                 self.recipeViewModels = recipeList.compactMap({
-                    RecipeTableCellViewModel(name: $0.name, ingredients: $0.ingredients, id: $0._id, imageURL: $0.imageURL)
+                    RecipeTableCellViewModel(name: $0.name, ingredients: $0.ingredients, id: $0._id, imageURL: $0.imageURL, instructions: $0.instructions)
                 })
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -40,19 +41,29 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToRecipe" {
+            let destinationVC = segue.destination as! RecipePageViewController
+            destinationVC.recipeName = recipeViewModels[self.index].name
+            destinationVC.ingredients = recipeViewModels[self.index].ingredients
+        }
+    }
 }
 
 
 // MARK: - Table view delegate
-extension ViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(recipeViewModels[indexPath.row])
+        self.index = indexPath.row
+        print(recipeViewModels[self.index].name)
         tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "goToRecipe", sender: self)
     }
 }
 
 // MARK: - Table view data source
-extension ViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count

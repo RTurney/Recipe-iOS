@@ -24,7 +24,7 @@
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WdG-bu-OL2">
                         <rect key="frame" x="324" y="5" width="135" height="130"/>
-                        <color key="backgroundColor" red="1" green="0.98431268136655814" blue="0.79616751224147442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="135" id="UVf-ea-VgO"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="vSf-Bc-xEf"/>

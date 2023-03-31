@@ -13,4 +13,5 @@ struct RecipeTableCellViewModel {
     let ingredients: [String]
     let id: String
     let imageURL: String?
+    let instructions: [String]?
 }

@@ -19,19 +19,7 @@ class RecipeTableViewCell: UITableViewCell {
     func configure(viewModel: RecipeTableCellViewModel) {
         recipeName.text = viewModel.name
         recipeImage.loadFrom(URLAddress: viewModel.imageURL!)
-        
-//        if let url = viewModel.imageURL {
-//            URLSession.shared.dataTask(with: url) { data, res, error in
-//                guard let data = data, error == nil else {
-//                    return
-//                }
-//                DispatchQueue.main.async {
-//                    self.recipeImage.image = UIImage(data: data)
-//                }
-//            }.resume()
-//        }
     }
-    
 }
 
 extension UIImageView {
